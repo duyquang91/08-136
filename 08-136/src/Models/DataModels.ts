@@ -6,10 +6,18 @@ export enum ExpenseType {
     Rent = 'Rent',
     Other = 'Other'
 }
+
+export enum ExpenseSplitType {
+    ByRoom = 'By rooms',
+    ByHeadCount = 'By headcount'
+}
+
 export type ExpenseData = {
     'name': ExpenseType,
     'amount': number,
-    'dateInterval': number
+    'splitBy': ExpenseSplitType,
+    'dateInterval': number,
+    'submittedBy': string
 }
 
 export enum RoomType {
@@ -34,5 +42,6 @@ export enum Month {
 
 export type TenantData = {
     'name': string,
-    'roomType': RoomType
+    'roomType': RoomType,
+    'expenses': ExpenseData[]
 }
