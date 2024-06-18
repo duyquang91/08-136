@@ -1,0 +1,30 @@
+export type ExpenseData = {
+    'name': string,
+    'amount': number,
+    'dateInterval': number
+}
+
+export enum RoomType {
+    Common = 'Common',
+    Master = 'Master'
+}
+
+export enum Month {
+    January = "January",
+    February = "February",
+    March = "March",
+    April = "April",
+    May = "May",
+    June = "June",
+    July = "July",
+    August = "August",
+    September = "September",
+    October = "October",
+    November = "November",
+    December = "December",
+}
+
+export type TenantData = {
+    'name': string,
+    'roomType': RoomType
+}
