@@ -1,5 +1,13 @@
+
+export enum ExpenseType {
+    ElectricAndWater = 'Electric & water',
+    Wifi = 'Wifi',
+    Cleanup = 'Cleanup',
+    Rent = 'Rent',
+    Other = 'Other'
+}
 export type ExpenseData = {
-    'name': string,
+    'name': ExpenseType,
     'amount': number,
     'dateInterval': number
 }
