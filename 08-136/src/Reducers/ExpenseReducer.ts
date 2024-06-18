@@ -1,9 +1,8 @@
 import { ExpenseType, ExpenseData } from "../Models/DataModels"
 
 export enum ExpenseActionType {
-    Add,
-    Edit,
-    Fetch
+    AddOrEdit,
+    Delete
 }
 
 export type ExpenseAction = {

@@ -1,6 +1,6 @@
 
 export enum ExpenseType {
-    ElectricAndWater = 'Electric & water',
+    Utility = 'Utility',
     Wifi = 'Wifi',
     Cleanup = 'Cleanup',
     Rent = 'Rent',
@@ -8,40 +8,38 @@ export enum ExpenseType {
 }
 
 export enum ExpenseSplitType {
-    ByRoom = 'By rooms',
-    ByHeadCount = 'By headcount'
+    ByRoomEqualy = 'By room equaly',
+    ByHeadcount = 'By headcounts',
+    ByRentRatio = 'By rent ratio'
 }
 
 export type ExpenseData = {
     'name': ExpenseType,
-    'amount': number,
-    'splitBy': ExpenseSplitType,
-    'dateInterval': number,
+    'desc'?: string,
+    'totalAmount': number,
+    'splits': ExpenseSplitType,
+    'month': number,
+    'year': number,
     'submittedBy': string
 }
 
 export enum RoomType {
-    Common = 'Common',
+    Libary = 'Library',
+    CommonLeft = 'Common left',
+    CommonRight = 'Common right',
     Master = 'Master'
 }
 
-export enum Month {
-    January = "January",
-    February = "February",
-    March = "March",
-    April = "April",
-    May = "May",
-    June = "June",
-    July = "July",
-    August = "August",
-    September = "September",
-    October = "October",
-    November = "November",
-    December = "December",
+export type Tenant = {
+    'name'?: string,
+    'isChild': boolean,
+    'livingDays': number
 }
 
-export type TenantData = {
-    'name': string,
-    'roomType': RoomType,
-    'expenses': ExpenseData[]
+export type RoomData = {
+    'type': RoomType,
+    'rentRatio': number,
+    'month': number,
+    'year': number,
+    'tenants': Tenant[]
 }
